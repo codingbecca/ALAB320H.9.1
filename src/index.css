@@ -1,0 +1,47 @@
+body{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #1B263B;
+    color: #e0e1dd;
+}
+
+button{
+    margin: 5px;
+    border: 1px solid #e0e1dd;
+    background-color: #e0e1dd;
+    color: #1B263B;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: #b2b3b0;
+    border-color: #b2b3b0;
+}
+
+button:disabled {
+    border: 1px solid transparent;
+    background-color: #444542f7;
+    color: #e0e1dd;
+}
+
+input{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: large;
+}
+
+input[type='checkbox']{
+    margin: 10px;
+    accent-color: #778DA9;
+    width: 18px;
+    height: 18px;
+}
+
+.todos{
+    margin: auto;
+    width: fit-content;
+}
+
+p{
+    margin: 0.3rem
+}

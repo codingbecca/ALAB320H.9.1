@@ -16,9 +16,8 @@ export default function reducer(state, action) {
       return state.map((todo) => {
         if (todo.id === action.id) {
           return {
+            ...todo,
             title: action.title,
-            completed: todo.completed,
-            id: todo.id,
           };
         } else {
           return todo;
