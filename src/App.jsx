@@ -1,12 +1,37 @@
-import './App.css'
+import "./App.css";
+import Todo from "./components/Todo";
+import initialState from "./data/data";
+
+import { useReducer, useState } from "react";
+import reducer from "./todoReducer";
 
 function App() {
+  const [newTodo, setNewTodo] = useState("");
+  const [todos, dispatch] = useReducer(reducer, initialState);
+
+  const handleClick = () => {
+    const trimmedTodo = newTodo.trim()
+    if(trimmedTodo){
+      dispatch({type: 'add_todo', payload: trimmedTodo});
+      setNewTodo('');
+    }
+  }
 
   return (
     <>
-      
+      <h1>Todo List</h1>
+      <input
+        type="text"
+        placeholder="Add task"
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
+      />
+      <button onClick={handleClick}>Add</button>
+      {todos.map((todo) => (
+        <Todo {...todo} key={todo.id} dispatch={dispatch} />
+      ))}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
